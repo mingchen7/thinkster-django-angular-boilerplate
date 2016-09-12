@@ -27,8 +27,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 
 		return (permissions.IsAuthenticated(), IsAccountOwner(),)
 
-	def create(self, request):
-		print request.data
+	def create(self, request):		
 		serializer = self.serializer_class(data=request.data)		
 
 		if serializer.is_valid():
